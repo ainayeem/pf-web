@@ -4,17 +4,6 @@ import PersonalInfo from "./Components/PersonalInfo/PersonalInfo";
 import Projects from "./Components/Projects/Projects";
 import Skills from "./Components/Skills/Skills";
 
-// export default function Home() {
-//   return (
-//     <div>
-//       <Hero />
-//       <AboutMe />
-//       <PersonalInfo />
-//       <Skills />
-//       <div className="bg-white h-[300vh]"></div>
-//     </div>
-//   );
-// }
 export default function Home() {
   return (
     <div>
