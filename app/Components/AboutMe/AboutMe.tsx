@@ -3,7 +3,7 @@ import React from "react";
 const AboutMe = () => {
   return (
     <div>
-      <div className="bg-white py-20 px-5 xl:p-20 border-b">
+      <div className="bg-[#eef2ff] py-20 px-5 xl:p-20 border-b">
         <div>
           <h1 className="text-4xl font-semibold text-center text-primaryColor">About Me</h1>
           <span className="w-20 h-1 mx-auto bg-primaryColor rounded block"></span>

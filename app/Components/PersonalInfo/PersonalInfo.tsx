@@ -4,7 +4,7 @@ import React from "react";
 const PersonalInfo = () => {
   return (
     <div className="">
-      <div className="bg-white py-20 px-5 xl:p-20 xl:pb-10 border-b">
+      <div className="bg-[#eef2ff] py-20 px-5 xl:p-20 xl:pb-10 border-b">
         <div>
           <h1 className="text-4xl font-semibold text-center">Personal Informations</h1>
           <span className="w-20 h-1 mx-auto bg-primaryColor rounded block"></span>

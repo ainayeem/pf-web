@@ -11,6 +11,7 @@ const Hero = () => {
             <h1 className="text-5xl xl:text-8xl -ml-1 xl:-ml-2 mb-3 font-semibold">Ashikul Islam</h1>
             <h1 className="text-5xl xl:text-8xl -ml-1 xl:-ml-2 mb-3 font-semibold">Nayeem</h1>
             <h2 className="text-xl xl:text-4xl mb-3 font-medium">Full Stack Developer</h2>
+
             <div className="mt-8 flex items-center justify-center xl:justify-start gap-5">
               <button
                 type="button"

@@ -24,3 +24,7 @@ body {
   background: var(--background);
   font-family: "Fredoka", sans-serif;
 }
+.scrollbar-hidden {
+  scrollbar-width: none;
+  cursor: n-resize;
+}

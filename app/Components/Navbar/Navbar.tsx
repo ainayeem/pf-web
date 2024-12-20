@@ -2,30 +2,38 @@
 import { usePathname, useRouter } from "next/navigation";
 import React from "react";
 
-const Navbar = () => {
+const Navbar: React.FC = () => {
   const router = useRouter();
   const pathname = usePathname();
-  const scrollTo = (id: string, block = "start") => {
-    console.log("p", pathname);
-    if (pathname != "/") {
+
+  // Smooth scroll function
+  const scrollTo = (id?: string, block: ScrollLogicalPosition = "start") => {
+    // console.log("Current pathname:", pathname);
+
+    if (pathname !== "/") {
       if (!id) {
         router.push("/");
       } else {
         router.push(`/#${id}`);
       }
+      return;
     }
+
     if (!id) {
       window.scrollTo({ top: 0, behavior: "smooth" });
     } else {
-      document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: block });
+      const element = document.getElementById(id);
+      element?.scrollIntoView({ behavior: "smooth", block });
     }
   };
 
-  const navValue = (
+  // Navigation links
+  const navLinks = (
     <>
       <li>
         <a
-          onClick={() => {
+          onClick={(e) => {
+            e.preventDefault();
             scrollTo("");
           }}
         >
@@ -34,7 +42,8 @@ const Navbar = () => {
       </li>
       <li>
         <a
-          onClick={() => {
+          onClick={(e) => {
+            e.preventDefault();
             scrollTo("about-me");
           }}
         >
@@ -43,7 +52,8 @@ const Navbar = () => {
       </li>
       <li>
         <a
-          onClick={() => {
+          onClick={(e) => {
+            e.preventDefault();
             scrollTo("skills");
           }}
         >
@@ -51,14 +61,29 @@ const Navbar = () => {
         </a>
       </li>
       <li>
-        <a>Projects</a>
+        <a
+          onClick={(e) => {
+            e.preventDefault();
+            scrollTo("projects");
+          }}
+        >
+          Projects
+        </a>
       </li>
-
+      {/* <li>
+        <a
+          onClick={(e) => {
+            e.preventDefault();
+            scrollTo("contact");
+          }}
+        >
+          Contact
+        </a>
+      </li> */}
       <li>
-        <a>Contact</a>
-      </li>
-      <li>
-        <a>Resume</a>
+        <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
+          Resume
+        </a>
       </li>
     </>
   );
@@ -67,6 +92,7 @@ const Navbar = () => {
     <div className="bg-primaryColor/70 backdrop-blur-3xl fixed top-0 left-0 right-0 z-50">
       <div className="xl:max-w-screen-xl xl:mx-auto border-none">
         <div className="navbar text-white">
+          {/* Navbar Start */}
           <div className="navbar-start">
             <div className="dropdown">
               <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -75,13 +101,15 @@ const Navbar = () => {
                 </svg>
               </div>
               <ul tabIndex={0} className="text-primaryColor menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
-                {navValue}
+                {navLinks}
               </ul>
             </div>
             <a className="btn btn-ghost text-xl">Nayeem</a>
           </div>
+
+          {/* Navbar Center */}
           <div className="navbar-center hidden lg:flex">
-            <ul className="menu menu-horizontal px-1">{navValue}</ul>
+            <ul className="menu menu-horizontal px-1">{navLinks}</ul>
           </div>
         </div>
       </div>

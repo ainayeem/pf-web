@@ -1,0 +1,24 @@
+[
+  {
+    "id": 1,
+    "title": "Health Care",
+    "tools": ["React", "Tailwind", "DaisyUi"],
+    "details": "",
+    "images": {
+      "main": "/assets/projects/health-care.png"
+    },
+    "repository": "https://github.com/ainayeem/healthcare-related-website",
+    "liveLink": "https://dazzling-archimedes-b0d3cb.netlify.app/"
+  },
+  {
+    "id": 2,
+    "title": "Bistro",
+    "tools": ["React", "Tailwind", "DaisyUi"],
+    "details": "",
+    "images": {
+      "main": "/assets/projects/bistro.png"
+    },
+    "repository": "https://github.com/ainayeem/healthcare-related-website",
+    "liveLink": "https://dazzling-archimedes-b0d3cb.netlify.app/"
+  }
+]

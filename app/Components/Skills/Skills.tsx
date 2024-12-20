@@ -36,9 +36,9 @@ const skills = [
 
 const Skills = () => {
   return (
-    <div>
+    <div className="bg-[#eef2ff]">
       <div>
-        <div className="bg-white py-20 px-5 xl:p-20 xl:pb-10 border-b">
+        <div className=" py-20 px-5 xl:p-20 xl:pb-10 border-b">
           <div>
             <h1 className="text-4xl font-semibold text-center">Skills</h1>
             <span className="w-20 h-1 mx-auto bg-primaryColor rounded block"></span>
@@ -49,8 +49,7 @@ const Skills = () => {
               return (
                 <div
                   key={index}
-                  className="flex border-2 border-primaryColor hover:border-primaryColor hover:bg-primaryColor 
-                        hover:text-white duration-300 rounded-md p-4 font-medium"
+                  className="flex border-2 border-primaryColor hover:border-primaryColor hover:bg-primaryColor hover:text-white duration-300 rounded-md p-4 font-medium"
                 >
                   <Icon size={30} />
                   <p className="mx-4">{skill.name}</p>
