@@ -81,7 +81,7 @@ const Navbar: React.FC = () => {
         </a>
       </li> */}
       <li>
-        <a href="/resume.pdf" target="_blank" rel="">
+        <a href="https://drive.google.com/file/d/1TsZa9HN_U53iWC7RmgdK2AbHcW4bfQ6A/view?usp=sharing" target="_blank" rel="">
           Resume
         </a>
       </li>
