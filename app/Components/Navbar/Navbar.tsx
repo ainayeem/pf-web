@@ -70,7 +70,7 @@ const Navbar: React.FC = () => {
           Projects
         </a>
       </li>
-      {/* <li>
+      <li>
         <a
           onClick={(e) => {
             e.preventDefault();
@@ -79,7 +79,7 @@ const Navbar: React.FC = () => {
         >
           Contact
         </a>
-      </li> */}
+      </li>
       <li>
         <a href="https://drive.google.com/file/d/1TsZa9HN_U53iWC7RmgdK2AbHcW4bfQ6A/view?usp=sharing" target="_blank" rel="">
           Resume
@@ -104,7 +104,7 @@ const Navbar: React.FC = () => {
                 {navLinks}
               </ul>
             </div>
-            <a className="btn btn-ghost text-xl">Nayeem</a>
+            <a className="text-xl">Nayeem</a>
           </div>
 
           {/* Navbar Center */}

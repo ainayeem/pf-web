@@ -5,7 +5,7 @@ import { FaLink } from "react-icons/fa";
 import { FiGithub } from "react-icons/fi";
 
 const Project = ({ project }) => {
-  console.log("project", project);
+  // console.log("project", project);
   return (
     <div className="flex flex-col items-center mb-7">
       {/* <h1>{project.title}</h1> */}
