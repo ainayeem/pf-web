@@ -2,7 +2,6 @@
 import React, { useState } from "react";
 import emailjs from "@emailjs/browser";
 import { toast } from "sonner";
-import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 import Image from "next/image";
 
 const Contact = () => {
@@ -62,7 +61,7 @@ const Contact = () => {
                     id="name"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
-                    className="peer border-[#e5eaf2] border rounded-md outline-none px-4 py-3 w-full focus:border-primaryColor transition-colors duration-300"
+                    className="peer border-[#e5eaf2] border rounded-md outline-none px-4 py-3 w-full focus:border-primaryColor transition-colors duration-300 mb-3"
                   />
                   <span
                     className={`absolute top-3.5 left-5 transition-all duration-300 rounded ${
@@ -79,7 +78,7 @@ const Contact = () => {
                     id="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="peer border-[#e5eaf2] border rounded-md outline-none px-4 py-3 w-full focus:border-primaryColor transition-colors duration-300"
+                    className="peer border-[#e5eaf2] border rounded-md outline-none px-4 py-3 w-full focus:border-primaryColor transition-colors duration-300 mb-3"
                   />
                   <span
                     className={`absolute top-3.5 left-5 transition-all duration-300 rounded ${
