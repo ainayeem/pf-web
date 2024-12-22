@@ -18,7 +18,7 @@
     "images": {
       "main": "/assets/projects/bistro.png"
     },
-    "repository": "https://github.com/ainayeem/healthcare-related-website",
-    "liveLink": "https://dazzling-archimedes-b0d3cb.netlify.app/"
+    "repository": "https://github.com/ainayeem/bistro",
+    "liveLink": "https://github.com/ainayeem/bistro-server"
   }
 ]
