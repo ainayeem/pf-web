@@ -1,8 +1,7 @@
 "use client";
-import React, { useState } from "react";
 import emailjs from "@emailjs/browser";
+import React, { useState } from "react";
 import { toast } from "sonner";
-import Image from "next/image";
 
 const Contact = () => {
   const [name, setName] = useState("");
@@ -19,6 +18,7 @@ const Contact = () => {
 
     const templateParams = { name, email, message };
 
+    // console.log("🚀 ~ handleSendEmail ~ templateParams:", templateParams);
     try {
       toast.promise(
         emailjs.send(
@@ -44,80 +44,56 @@ const Contact = () => {
     }
   };
   return (
-    <div>
-      <div className="bg-[#eef2ff]">
-        <div>
-          <div className=" py-20 px-5 xl:p-20 xl:pb-10 border-b">
+    <div className="bg-[#eef2ff] py-20 px-5 xl:p-20">
+      <div className="max-w-5xl mx-auto bg-white p-10 rounded-lg">
+        <h1 className="text-4xl font-semibold text-center mb-4">Contact</h1>
+        <span className="w-20 h-1 mx-auto bg-primaryColor rounded block"></span>
+
+        <div className="mt-16 grid grid-cols-1 xl:grid-cols-2 gap-10 items-center">
+          <form onSubmit={handleSendEmail} className="xl:col-span-2 grid grid-cols-1 xl:grid-cols-2 gap-6">
             <div>
-              <h1 className="text-4xl font-semibold text-center">contact</h1>
-              <span className="w-20 h-1 mx-auto bg-primaryColor rounded block"></span>
+              <label className="text-sm font-medium">Name:</label>
+              <input
+                type="text"
+                placeholder="Enter your name"
+                id="name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                className="border border-gray-300 rounded-md px-4 py-2 w-full focus:outline-none focus:ring-2 focus:ring-primaryColor"
+              />
             </div>
-            <div className="mt-16 grid grid-cols-1 xl:grid-cols-3 gap-10 xl:gap-20 align-middle">
-              <form onSubmit={handleSendEmail} className="xl:col-span-2 grid grid-cols-1 xl:grid-cols-2 gap-2 xl:gap-y-5 xl:gap-x-10 align-middle">
-                <label className="relative w-full">
-                  <input
-                    type="text"
-                    name="name"
-                    id="name"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                    className="peer border-[#e5eaf2] border rounded-md outline-none px-4 py-3 w-full focus:border-primaryColor transition-colors duration-300 mb-3"
-                  />
-                  <span
-                    className={`absolute top-3.5 left-5 transition-all duration-300 rounded ${
-                      name ? "bg-white left-2 scale-[0.9] text-primaryColor -px-1 -top-2.5" : "text-[#777777]"
-                    } peer-focus:-top-3 peer-focus:bg-white peer-focus:left-2 peer-focus:scale-[0.9] peer-focus:text-primaryColor peer-focus:px-1`}
-                  >
-                    Enter your name
-                  </span>
-                </label>
-                <label className="relative w-full">
-                  <input
-                    type="email"
-                    name="email"
-                    id="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    className="peer border-[#e5eaf2] border rounded-md outline-none px-4 py-3 w-full focus:border-primaryColor transition-colors duration-300 mb-3"
-                  />
-                  <span
-                    className={`absolute top-3.5 left-5 transition-all duration-300 rounded ${
-                      email ? "bg-white left-2 scale-[0.9] text-primaryColor -px-1 -top-2.5" : "text-[#777777]"
-                    } peer-focus:-top-3 peer-focus:bg-white peer-focus:left-2 peer-focus:scale-[0.9] peer-focus:text-primaryColor peer-focus:px-1`}
-                  >
-                    Enter your email
-                  </span>
-                </label>
-                <label className="relative xl:col-span-2 w-full">
-                  <textarea
-                    name="message"
-                    id="message"
-                    value={message}
-                    onChange={(e) => setMessage(e.target.value)}
-                    className="peer border-[#e5eaf2] border rounded-md outline-none px-4 min-h-[200px] py-3 w-full focus:border-primaryColor transition-colors duration-300"
-                  />
-                  <span
-                    className={`absolute top-3.5 left-5 transition-all duration-300 rounded ${
-                      message ? "bg-white left-2 scale-[0.9] text-primaryColor -px-1 -top-2.5" : "text-[#777777]"
-                    } peer-focus:-top-3 peer-focus:bg-white peer-focus:left-2 peer-focus:scale-[0.9] peer-focus:text-primaryColor peer-focus:px-1`}
-                  >
-                    Write your message
-                  </span>
-                </label>
-                <div className="xl:col-span-2">
-                  <button
-                    type="submit"
-                    className="inline-flex items-center justify-center px-6 py-2 text-sm font-semibold leading-5 text-white transition-all duration-200 bg-primaryColorButton border border-transparent rounded-md focus:outline-none hover:bg-primaryColorHovar"
-                  >
-                    Contact Me
-                  </button>
-                </div>
-              </form>
-              <div>
-                <Image src="/assets/gif/contact.png" alt="Project Image" className="h-auto w-full" width={500} height={500} />
-              </div>
+            <div>
+              <label className="text-sm font-medium">Email:</label>
+              <input
+                type="email"
+                placeholder="Enter your email"
+                id="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="border border-gray-300 rounded-md px-4 py-2 w-full focus:outline-none focus:ring-2 focus:ring-primaryColor"
+              />
             </div>
-          </div>
+            <div className="xl:col-span-2">
+              <label className="text-sm font-medium">Message:</label>
+              <textarea
+                className="border border-gray-300 rounded-md px-4 py-2 w-full h-32 focus:outline-none focus:ring-2 focus:ring-primaryColor"
+                placeholder="Write your message"
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+              ></textarea>
+            </div>
+            <div className="xl:col-span-2">
+              <button
+                type="submit"
+                className="w-full bg-primaryColorButton text-white py-3 rounded-md font-semibold hover:bg-primaryColorHovar transition duration-300"
+              >
+                Contact Me
+              </button>
+            </div>
+          </form>
+          {/* <div>
+            <Image src="/assets/gif/contact.png" alt="Contact" width={500} height={500} className="rounded-md shadow-md" />
+          </div> */}
         </div>
       </div>
     </div>
