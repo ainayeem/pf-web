@@ -1,6 +1,28 @@
 [
   {
     "id": 1,
+    "title": "Car Shop",
+    "tools": ["React", "Tailwind", "Redux", "TypeScript", "MongoDB"],
+    "details": "",
+    "images": {
+      "main": "/assets/projects/car-shop.png"
+    },
+    "repository": "https://github.com/ainayeem/car-shop-frontend",
+    "liveLink": "https://the-car-shop.vercel.app/"
+  },
+  {
+    "id": 2,
+    "title": "Softnio Restaurent",
+    "tools": ["React", "Tailwind", "EmailJS"],
+    "details": "",
+    "images": {
+      "main": "/assets/projects/softnio.png"
+    },
+    "repository": "https://github.com/ainayeem/softnio-project-frontend",
+    "liveLink": "https://softnio-resturant.netlify.app/"
+  },
+  {
+    "id": 3,
     "title": "Health Care",
     "tools": ["React", "Tailwind", "DaisyUi"],
     "details": "",
@@ -11,7 +33,7 @@
     "liveLink": "https://dazzling-archimedes-b0d3cb.netlify.app/"
   },
   {
-    "id": 2,
+    "id": 4,
     "title": "Bistro",
     "tools": ["React", "Tailwind", "DaisyUi"],
     "details": "",
