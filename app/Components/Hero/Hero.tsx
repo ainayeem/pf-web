@@ -1,8 +1,11 @@
 "use client";
+import { scrollTo } from "@/app/utility/scroollUtils";
 import Image from "next/image";
-import React from "react";
+import { usePathname, useRouter } from "next/navigation";
 // #1a2f4a
 const Hero = () => {
+  const router = useRouter();
+  const pathname = usePathname();
   return (
     <div className="bg-primaryColor">
       <div className="xl:max-w-screen-xl xl:mx-auto">
@@ -15,6 +18,10 @@ const Hero = () => {
 
             <div className="mt-8 flex items-center justify-center xl:justify-start gap-5">
               <button
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollTo(router, pathname, "contact");
+                }}
                 type="button"
                 className="inline-flex items-center justify-center px-6 py-2 text-sm font-semibold leading-5 text-white transition-all duration-200 bg-primaryColorButton border border-transparent rounded-md focus:outline-none hover:bg-primaryColorHovar"
               >

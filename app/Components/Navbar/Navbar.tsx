@@ -1,4 +1,5 @@
 "use client";
+import { scrollTo } from "@/app/utility/scroollUtils";
 import { usePathname, useRouter } from "next/navigation";
 import React from "react";
 
@@ -7,25 +8,25 @@ const Navbar: React.FC = () => {
   const pathname = usePathname();
 
   // Smooth scroll function
-  const scrollTo = (id?: string, block: ScrollLogicalPosition = "start") => {
-    // console.log("Current pathname:", pathname);
+  // const scrollTo = (id?: string, block: ScrollLogicalPosition = "start") => {
+  //   // console.log("Current pathname:", pathname);
 
-    if (pathname !== "/") {
-      if (!id) {
-        router.push("/");
-      } else {
-        router.push(`/#${id}`);
-      }
-      return;
-    }
+  //   if (pathname !== "/") {
+  //     if (!id) {
+  //       router.push("/");
+  //     } else {
+  //       router.push(`/#${id}`);
+  //     }
+  //     return;
+  //   }
 
-    if (!id) {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    } else {
-      const element = document.getElementById(id);
-      element?.scrollIntoView({ behavior: "smooth", block });
-    }
-  };
+  //   if (!id) {
+  //     window.scrollTo({ top: 0, behavior: "smooth" });
+  //   } else {
+  //     const element = document.getElementById(id);
+  //     element?.scrollIntoView({ behavior: "smooth", block });
+  //   }
+  // };
 
   // Navigation links
   const navLinks = (
@@ -34,7 +35,7 @@ const Navbar: React.FC = () => {
         <a
           onClick={(e) => {
             e.preventDefault();
-            scrollTo("");
+            scrollTo(router, pathname);
           }}
         >
           Home
@@ -44,7 +45,7 @@ const Navbar: React.FC = () => {
         <a
           onClick={(e) => {
             e.preventDefault();
-            scrollTo("about-me");
+            scrollTo(router, pathname, "about-me");
           }}
         >
           About Me
@@ -54,7 +55,7 @@ const Navbar: React.FC = () => {
         <a
           onClick={(e) => {
             e.preventDefault();
-            scrollTo("skills");
+            scrollTo(router, pathname, "skills");
           }}
         >
           Skills
@@ -64,7 +65,7 @@ const Navbar: React.FC = () => {
         <a
           onClick={(e) => {
             e.preventDefault();
-            scrollTo("projects");
+            scrollTo(router, pathname, "projects");
           }}
         >
           Projects
@@ -74,7 +75,7 @@ const Navbar: React.FC = () => {
         <a
           onClick={(e) => {
             e.preventDefault();
-            scrollTo("contact");
+            scrollTo(router, pathname, "contact");
           }}
         >
           Contact
