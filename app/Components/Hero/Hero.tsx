@@ -28,7 +28,7 @@ const Hero = () => {
                 Contact Me
               </button>
               <button
-                onClick={() => window.open("https://drive.google.com/file/d/1TsZa9HN_U53iWC7RmgdK2AbHcW4bfQ6A/view?usp=sharing", "_blank")}
+                onClick={() => window.open("https://drive.google.com/drive/folders/1F2UUAzPPbegBta4UyghWUL4tX83qFj2d?usp=sharing", "_blank")}
                 type="button"
                 className="inline-flex items-center justify-center px-6 py-2 text-sm font-semibold leading-5 text-white transition-all duration-200 bg-primaryColorButton border border-transparent rounded-md focus:outline-none hover:bg-primaryColorHovar"
               >
